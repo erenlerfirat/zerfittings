@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/portlinelogo-mini.png";
+import logo from "../../assets/zerfittingslogo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ServicesDropdown from "./ServicesDropDown";
-import InfoBar from "./InforBar.js";
+import InfoBar from "./InfoBar.js";
 import styles from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
@@ -37,13 +37,13 @@ const MainNavigation = () => {
               <img
                 src={logo}
                 alt="Portline Global"
-                className="h-16 w-auto rounded-3xl"
+                className="h-20 w-auto rounded-3xl"
               />
 
               <span
                 className={`text-blue-800 uppercase tracking-[0.20em]  font-semibold ${styles.shineWrapper}`}
               >
-                PORTLINE GLOBAL
+                ZER FITTINGS
                 <span className={styles.shineWave} />
               </span>
             </Link>
@@ -51,17 +51,17 @@ const MainNavigation = () => {
             {/* DESKTOP NAV */}
             <div className="hidden lg:flex gap-10">
               <Link className="hover:text-teal-600 transition" to="/Home">
-                Home
+                Anasayfa
               </Link>
               <Link className="hover:text-teal-600 transition" to="/Contact">
-                Contact
+                İletişim
               </Link>
               <ServicesDropdown />
               <Link className="hover:text-teal-600 transition" to="/Products">
-                Products
+                Ürünler
               </Link>
               <Link className="hover:text-teal-600 transition" to="/About">
-                About
+                Hakkında
               </Link>
             </div>
 
