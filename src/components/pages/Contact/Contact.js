@@ -16,7 +16,7 @@ function Contact() {
         <div className="flex flex-col items-center">
           <FontAwesomeIcon icon={faPhone} className="text-blue-600 w-14 h-14 mb-4" />
           <h3 className="text-lg font-semibold">Telefon</h3>
-          <p className="text-gray-600 mt-1">(+90) 5453343535</p>
+          <p className="text-gray-600 mt-1">(+90) 545 334 3535</p>
         </div>
 
         {/* EMAIL */}

@@ -92,17 +92,19 @@ const MainNavigation = () => {
       >
         <div className="pt-24 px-8 space-y-8 text-lg font-bold tracking-wider">
           <Link className="block hover:text-teal-600" to="/Home">
-            Home
+            Anasayfa
           </Link>
           <Link className="block hover:text-teal-600" to="/Contact">
-            Contact
+            İletişim
           </Link>
-          <ServicesDropdown />
+          <div className="flex items-center h-auto">
+            <ServicesDropdown />
+          </div>
           <Link className="block hover:text-teal-600" to="/Products">
-            Products
+            Ürünler
           </Link>
           <Link className="block hover:text-teal-600" to="/About">
-            About
+            Hakkında
           </Link>
         </div>
       </div>
