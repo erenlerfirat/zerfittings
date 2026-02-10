@@ -1,21 +1,17 @@
-import Button from '../../common/Button'
+import MainNavigation from '../../layout/MainNavigation.js'
+import Footer from '../../layout/Footer.js'
+import ContactForm from '../Home/ContactForm.js'
+import Brochure from './Brochure.js'
 
-function ServiceSection({ img, headerFirstLine, desc }) {
+function Catalog() {
     return (
-        <div className="flex flex-col mx-auto mb-0 mt-2 bg-gray-50 text-white rounded-md shadow-lg">
-
-            <img src={img} className="rounded-xl w-12/12 mx-auto w-[420px] h-[280px]" />
-
-            <div className=" font-extrabold text-2xl text-gray-800 text-center my-2 py-6 h-[110px]">
-                <p>
-                    {headerFirstLine}
-                </p>
-            </div>
-            <div className="font-light px-4 pb-12 text-md text-gray-800 text-center my-2 h-[168px] ">
-                {desc}{desc}{desc}
-            </div>
-            <Button style="bg-green-300 my-4 ">both known for their precision</Button>
+        <div className="bg-gray-100 h-screen w-screen overflow-x-hidden">
+            <MainNavigation />
+            <Brochure/>
+            <ContactForm />
+            <Footer />
         </div>
     )
 }
-export default ServiceSection
+
+export default Catalog

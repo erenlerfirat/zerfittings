@@ -57,9 +57,9 @@ const MainNavigation = () => {
                 İletişim
               </Link>
               <ServicesDropdown />
-              <Link className="hover:text-teal-600 transition" to="/Products">
-                Ürünler
-              </Link>
+              {/* <Link className="hover:text-teal-600 transition" to="/Catalog">
+                Katalog
+              </Link> */}
               <Link className="hover:text-teal-600 transition" to="/About">
                 Hakkında
               </Link>
@@ -100,9 +100,9 @@ const MainNavigation = () => {
           <div className="flex items-center h-auto">
             <ServicesDropdown />
           </div>
-          <Link className="block hover:text-teal-600" to="/Products">
-            Ürünler
-          </Link>
+          {/* <Link className="block hover:text-teal-600" to="/Catalog">
+            Katalog
+          </Link> */}
           <Link className="block hover:text-teal-600" to="/About">
             Hakkında
           </Link>

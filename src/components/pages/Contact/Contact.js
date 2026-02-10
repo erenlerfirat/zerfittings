@@ -9,8 +9,8 @@ function Contact() {
         <div className="bg-gray-100 h-screen w-screen overflow-x-hidden">
             <MainNavigation />
              
-    <div className="w-full py-12 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center px-6">
+        <div className="w-full py-12 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center px-6">
 
         {/* PHONE */}
         <div className="flex flex-col items-center">

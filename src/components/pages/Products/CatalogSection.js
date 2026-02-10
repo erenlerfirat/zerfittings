@@ -19,38 +19,16 @@ function Service() {
                 <ServiceSection
                     img={img}
                     headerFirstLine={"services.item.header"}
-                    desc={"services.item.desc"}>
+                >
                 </ServiceSection>
 
                 <ServiceSection
                     img={img2}
                     headerFirstLine={"services.item2.header"}
-                    desc={"services.item2.desc"}>
+                    >
                 </ServiceSection>
 
-                <ServiceSection
-                    img={img3}
-                    headerFirstLine={"services.item3.header"}
-                    desc={"services.item3.desc"}>
-                </ServiceSection>
-
-                <ServiceSection
-                    img={img4}
-                    headerFirstLine={"services.item4.header"}
-                    desc={"services.item4.desc"}>
-                </ServiceSection>
-
-                <ServiceSection
-                    img={img5}
-                    headerFirstLine={"services.item5.header"}
-                    desc={"services.item5.desc"}>
-                </ServiceSection>
-
-                <ServiceSection
-                    img={img6}
-                    headerFirstLine={"services.item6.header"}
-                    desc={"services.item6.desc"}>
-                </ServiceSection>
+                
             </ul>
         </div>
     )

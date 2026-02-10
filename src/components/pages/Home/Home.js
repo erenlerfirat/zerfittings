@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className=" h-screen w-screen overflow-x-hidden">            
             <MainNavigation />
-            <FeatureSection />
+            {/* <FeatureSection /> */}
             <Slider/>
             <ContactForm />
             <Footer />
