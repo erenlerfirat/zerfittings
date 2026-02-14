@@ -1,95 +1,107 @@
-import { useState, useEffect, useRef } from "react";
-import { Dropdown, DropdownItem, DropdownDivider } from "flowbite-react";
-import { Link } from "react-router-dom";
-import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+    import { useState, useEffect, useRef } from "react";
+    import { Dropdown, DropdownItem, DropdownDivider } from "flowbite-react";
+    import { Link } from "react-router-dom";
+    import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-function ServicesDropdown() {
+    function ServicesDropdown() {
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const handleMenuToggle = (title) => {
+    setOpenMenu(prev => (prev === title ? null : title));
+  };
+
   return (
     <Dropdown
       renderTrigger={() => (
-        <span className="cursor-pointer hover:text-teal-600 ">
+        <span className="cursor-pointer hover:text-teal-600">
           Ürünler <FontAwesomeIcon icon={faChevronDown} />
         </span>
       )}
-      inline 
+      inline
     >
-      <SubMenu 
-        title="Hijyenik Paslanmaz Ürünler" 
+      <DropdownItem  ></DropdownItem>
+      <SubMenu
+        title="Hijyenik Paslanmaz Ürünler"
+        isOpen={openMenu === "Hijyenik Paslanmaz Ürünler"}
+        onToggle={() => handleMenuToggle("Hijyenik Paslanmaz Ürünler")}
         items={[
           { to: "/urunler/paslanmaz-dirsek", label: "Paslanmaz Dirsek" },
           { to: "/urunler/paslanmaz-tee", label: "Paslanmaz Tee" },
           { to: "/urunler/paslanmaz-boru-kelepce", label: "Paslanmaz Boru Kelepçe" },
           { to: "/urunler/paslanmaz-filtre", label: "Paslanmaz Filtre" },
-        ]} 
+        ]}
       />
 
       <DropdownDivider />
 
-      <SubMenu 
-        title="Endüstriyel Ürünler" 
+      <SubMenu
+        title="Endüstriyel Ürünler"
+        isOpen={openMenu === "Endüstriyel Ürünler"}   
+        onToggle={() => handleMenuToggle("Endüstriyel Ürünler")}
         items={[
-          { to: "/urunler/disli-fittings", label: "Dişli Fittings" },
-          { to: "/urunler/kaynakli-fittings", label: "Kaynaklı Fittings" },
-        ]} 
+          { to: "/disli-fittings", label: "Dişli Fittings" },
+          { to: "/kaynakli-fittings", label: "Kaynaklı Fittings" },
+        ]}
       />
 
       <DropdownDivider />
 
       <DropdownItem>
-        <Link to="/urunler/boru">Boru</Link>
+        <Link to="/boru">Boru</Link>
       </DropdownItem>
 
       <DropdownDivider />
       
       <DropdownItem>
-        <Link to="/urunler/profil">Profil</Link>
+        <Link to="/profil">Profil</Link>
       </DropdownItem>
     </Dropdown>
   );
 }
 
-function SubMenu({ title, items }) {
-  const [open, setOpen] = useState(false);
+
+   function SubMenu({ title, items, isOpen, onToggle }) {
   const submenuRef = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (submenuRef.current && !submenuRef.current.contains(event.target)) {
-        setOpen(false);
+    const handleClickOutside = (e) => {
+      if (isOpen && submenuRef.current && !submenuRef.current.contains(e.target)) {
+        onToggle();
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isOpen, onToggle]);
 
   return (
     <div className="relative" ref={submenuRef}>
-      <div 
+      <div
         onClick={(e) => {
           e.preventDefault();
-          e.stopPropagation(); 
-          setOpen(!open);
+          e.stopPropagation();
+          onToggle();
         }}
-        className={`flex justify-between items-center w-64 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${open ? 'text-teal-600 bg-gray-50' : 'text-gray-700'}`}
+        className={`flex justify-between items-center w-64 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100
+          ${isOpen ? "text-teal-600 bg-gray-50" : "text-gray-700"}`}
       >
         <span>{title}</span>
-        <FontAwesomeIcon 
-          icon={faChevronRight} 
-          className={`text-[10px] transition-transform duration-200 ${open ? 'rotate-90' : ''}`} 
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          className={`text-[10px] transition-transform ${isOpen ? "rotate-90" : ""}`}
         />
       </div>
-      
-      {open && (
-        <div className="relative left-0 w-full md:absolute md:left-full md:top-0 md:min-w-[220px] md:ml-1 md:shadow-xl bg-gray-50 md:bg-white border-l-4 border-teal-500 md:border-l md:border-gray-200 rounded-r-lg z-[100]">
+
+      {isOpen && (
+        <div className="md:absolute md:top-0 md:right-full md:ml-1 min-w-[220px] bg-white shadow-xl border rounded-lg z-[100]">
           <ul className="py-2">
-            {items.map((item, index) => (
-              <li key={index}>
-                <Link 
-                  to={item.to} 
-                  className="block px-8 md:px-4 py-2 text-sm text-gray-700 hover:bg-teal-100 md:hover:bg-teal-50 hover:text-teal-600"
-                  onClick={() => setOpen(false)}
+            {items.map((item, i) => (
+              <li key={i}>
+                <Link
+                  to={item.to}
+                  className="block px-4 py-2 text-sm hover:bg-teal-50"
+                  onClick={onToggle}
                 >
                   {item.label}
                 </Link>
@@ -103,5 +115,7 @@ function SubMenu({ title, items }) {
 }
 
 
-export default ServicesDropdown;
+
+
+    export default ServicesDropdown;
 

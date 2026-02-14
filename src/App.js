@@ -8,6 +8,10 @@ import StainlessClamp from './components/pages/Products/hygiene/StainlessClamp.j
 import StainlessTee from './components/pages/Products/hygiene/StainlessTee.js';
 import StainlessFilter from './components/pages/Products/hygiene/StainlessFilter.js';
 import StainlessJoint from './components/pages/Products/hygiene/StainlessJoint.js';
+import WeldedFittings from './components/pages/Products/industry/WeldedFittings.js';
+import ThreadedFittings from './components/pages/Products/industry/ThreadedFittings.js';
+import Pipe from './components/pages/Products/pipe/Pipe.js';
+import Profile from './components/pages/Products/profile/Profile.js';
 
 function App() {
 
@@ -23,6 +27,10 @@ function App() {
         <Route path="/urunler/paslanmaz-tee" element={<StainlessTee/>} />
         <Route path="/urunler/paslanmaz-boru-kelepce" element={<StainlessClamp/>} />
         <Route path="/urunler/paslanmaz-filtre" element={<StainlessFilter/>} />
+        <Route path="/disli-fittings" element={<ThreadedFittings/>} />
+        <Route path="/kaynakli-fittings" element={<WeldedFittings/>} />
+        <Route path="/boru" element={<Pipe/>} />
+        <Route path="/profil" element={<Profile/>} />
       </Routes>
   );
 }
