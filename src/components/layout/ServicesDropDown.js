@@ -21,7 +21,7 @@
       )}
       inline
     >
-      <DropdownItem  ></DropdownItem>
+      
       <SubMenu
         title="Hijyenik Paslanmaz Ürünler"
         isOpen={openMenu === "Hijyenik Paslanmaz Ürünler"}
@@ -48,15 +48,16 @@
 
       <DropdownDivider />
 
-      <DropdownItem>
-        <Link to="/boru">Boru</Link>
+      <DropdownItem as={Link} to="/boru">
+         Boru
       </DropdownItem>
 
       <DropdownDivider />
       
-      <DropdownItem>
-        <Link to="/profil">Profil</Link>
+      <DropdownItem as={Link} to="/profil">
+        Profil
       </DropdownItem>
+
     </Dropdown>
   );
 }

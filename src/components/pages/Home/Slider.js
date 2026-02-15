@@ -27,10 +27,10 @@ function Slider() {
                     "
                   >
                     <div className="text-white text-center px-6">
-                      <h2 className="text-xl font-bold mb-2">Sustainable Growth</h2>
+                      <h2 className="text-xl font-bold mb-2">Sürdürülebilir Geliştirme</h2>
                       <p className="text-sm ">
-                        Portline Global promotes responsible operations and eco-focused solutions.<br></br>
-                        We work to protect the environment while supporting safe, efficient maritime services.
+                        Zer Fittings, sorumlu operasyonları ve çevre odaklı çözümleri teşvik eder.<br></br>
+                        Güvenli ve verimli denizcilik hizmetlerini desteklerken çevrenin korunması için çalışıyoruz.
                       </p>
                     </div>
                   </div>
@@ -57,8 +57,8 @@ function Slider() {
                     <div className="text-white text-center px-6">
                       <h2 className="text-xl font-bold mb-2">Great Place to Work</h2>
                       <p className="text-sm">
-                        We empower people, encourage growth, and build a culture of teamwork and trust.<br></br>
-                        Portline Global is a workplace where everyone can succeed.
+                        İnsanları güçlendirir, gelişimi teşvik eder ve ekip çalışması ile güven kültürü oluştururuz.<br></br>
+                        Zer Fittings, herkesin başarıya ulaşabileceği bir çalışma ortamıdır.
                       </p>
                     </div>
                   </div>
@@ -82,11 +82,11 @@ function Slider() {
                     "
                   >
                     <div className="text-white text-center px-6">
-                      <h2 className="text-xl font-bold mb-2">Global Reach & Safety</h2>
+                      <h2 className="text-xl font-bold mb-2">Global Araştırma & Güvenlik</h2>
                       <p className="text-sm">
-                        Worldwide presence, seamless service.<br></br>
-                        Safety first, every step.<br></br>
-                        Excellence in every process ensures dependable and risk-free service delivery.
+                        Dünya çapında varlık, kesintisiz hizmet.<br></br>
+                        Her adımda önce güvenlik.<br></br>
+                        Her süreçte mükemmeliyet anlayışımız, güvenilir ve risksiz hizmet sunumunu garanti eder.
                       </p>
                     </div>
                   </div>
