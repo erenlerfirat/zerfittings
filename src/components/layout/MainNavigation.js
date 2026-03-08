@@ -41,7 +41,7 @@ const MainNavigation = () => {
               />
 
               <span
-                className={`text-blue-800 uppercase tracking-[0.20em]  font-semibold ${styles.shineWrapper}`}
+                className={`text-blue-600 uppercase tracking-[0.20em]  font-semibold ${styles.shineWrapper}`}
               >
                 ZER FITTINGS
                 <span className={styles.shineWave} />
@@ -50,17 +50,17 @@ const MainNavigation = () => {
 
             {/* DESKTOP NAV */}
             <div className="hidden lg:flex gap-10">
-              <Link className="hover:text-teal-600 transition" to="/Home">
+              <Link className="hover:text-blue-600 transition" to="/Home">
                 Anasayfa
               </Link>
-              <Link className="hover:text-teal-600 transition" to="/Contact">
+              <Link className="hover:text-blue-600 transition" to="/Contact">
                 İletişim
               </Link>
               <ServicesDropdown />
               {/* <Link className="hover:text-teal-600 transition" to="/Catalog">
                 Katalog
               </Link> */}
-              <Link className="hover:text-teal-600 transition" to="/About">
+              <Link className="hover:text-blue-600 transition" to="/About">
                 Hakkında
               </Link>
             </div>

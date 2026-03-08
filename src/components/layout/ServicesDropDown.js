@@ -15,7 +15,7 @@
   return (
     <Dropdown
       renderTrigger={() => (
-        <span className="cursor-pointer hover:text-teal-600">
+        <span className="cursor-pointer hover:text-blue-600">
           Ürünler <FontAwesomeIcon icon={faChevronDown} />
         </span>
       )}
@@ -85,7 +85,7 @@
           onToggle();
         }}
         className={`flex justify-between items-center w-64 px-4 py-2 text-sm cursor-pointer hover:bg-gray-100
-          ${isOpen ? "text-teal-600 bg-gray-50" : "text-gray-700"}`}
+          ${isOpen ? "text-blue-600 bg-gray-50" : "text-gray-700"}`}
       >
         <span>{title}</span>
         <FontAwesomeIcon
@@ -95,13 +95,17 @@
       </div>
 
       {isOpen && (
-        <div className="md:absolute md:top-0 md:right-full md:ml-1 min-w-[220px] bg-white shadow-xl border rounded-lg z-[100]">
+        <div className="
+        absolute top-full left-0 mt-1 min-w-[220px] bg-white shadow-xl border rounded-lg z-[100]
+        md:absolute md:top-0 md:left-full md:mr-1 md:left-auto
+        lg:right-full lg:left-auto lg:ml-1
+      ">
           <ul className="py-2">
             {items.map((item, i) => (
               <li key={i}>
                 <Link
                   to={item.to}
-                  className="block px-4 py-2 text-sm hover:bg-teal-50"
+                  className="block px-4 py-2 text-sm hover:text-blue-600"
                   onClick={onToggle}
                 >
                   {item.label}

@@ -7,7 +7,7 @@ function Slider() {
   return (
     <div className="bg-white h-screen flex border-y border-gray-200">
       <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 w-10/12 max-w-4xl mx-auto my-24 self-center">
-        <Carousel slideInterval={4000}>
+        <Carousel slideInterval={8000}>
 
           {/* Slide 1 */}
           <div className="relative h-full w-full group">
