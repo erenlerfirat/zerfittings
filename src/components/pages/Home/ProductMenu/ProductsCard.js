@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Product from "../Products/Product";
-import img from '../../../assets/photo/boru/1.png';
+import Product from "../../Products/Product";
+import img from '../../../../assets/photo/boru/1.png';
 
 function ProductsCard() {
   return (
