@@ -5,11 +5,13 @@ import Slider from './Slider.js'
 import Process from './Process.js'
 import ProductsCard from './ProductMenu/ProductsCard.js'
 import FeatureSection from './FeatureSection.js'
+import CookiePolicyModal from '../../common/CookiePolicyModal.js'
 
 function Home() {
     return (
         <div className=" h-screen w-screen overflow-x-hidden">            
             <MainNavigation />
+            <CookiePolicyModal />
             <ProductsCard />
             <Process/>
             <FeatureSection />   
