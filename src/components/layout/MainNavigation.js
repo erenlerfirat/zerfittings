@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/zerfittingslogo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ServicesDropdown from "./ServicesDropDown";
@@ -7,6 +7,16 @@ import InfoBar from "./InfoBar.js";
 import styles from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
+      const navigate = useNavigate();
+    
+    const handleHomeClick = (e) => {
+      if (location.pathname === "/") {
+        e.preventDefault(); // Linkin default yönlendirmesini engelle
+        window.scrollTo({ top: 0, behavior: "smooth" }); // yukarı scroll
+      } else {
+        navigate("/"); // başka sayfadaysa yönlendir
+      }
+    };
   const [toggleMenu, setToggleMenu] = useState(false);
   const location = useLocation();
 
@@ -31,12 +41,13 @@ const MainNavigation = () => {
             
             {/* LOGO */}
             <Link
+            onClick={handleHomeClick}
               to="/Home"
               className="flex items-center gap-3 hover:scale-105 transition"
             >
               <img
                 src={logo}
-                alt="Portline Global"
+                alt="Zer Fittings"
                 className="h-20 w-auto rounded-3xl"
               />
 
@@ -50,9 +61,9 @@ const MainNavigation = () => {
 
             {/* DESKTOP NAV */}
             <div className="hidden lg:flex gap-10">
-              <Link className="hover:text-blue-600 transition" to="/Home">
-                Anasayfa
-              </Link>
+                <Link onClick={handleHomeClick} className="hover:text-blue-600 transition" to="/">
+                  Anasayfa
+                </Link>
               <Link className="hover:text-blue-600 transition" to="/Contact">
                 İletişim
               </Link>
@@ -91,7 +102,7 @@ const MainNavigation = () => {
         `}
       >
         <div className="pt-24 px-8 space-y-8 text-lg font-bold tracking-wider">
-          <Link className="block hover:text-teal-600" to="/Home">
+          <Link onClick={handleHomeClick} className="block hover:text-teal-600" to="/Home">
             Anasayfa
           </Link>
           <Link className="block hover:text-teal-600" to="/Contact">

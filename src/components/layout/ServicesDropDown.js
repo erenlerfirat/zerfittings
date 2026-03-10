@@ -41,8 +41,8 @@
         isOpen={openMenu === "Endüstriyel Ürünler"}   
         onToggle={() => handleMenuToggle("Endüstriyel Ürünler")}
         items={[
-          { to: "/disli-fittings", label: "Dişli Fittings" },
-          { to: "/kaynakli-fittings", label: "Kaynaklı Fittings" },
+          { to: "/urunler/disli-fittings", label: "Dişli Fittings" },
+          { to: "/urunler/kaynakli-fittings", label: "Kaynaklı Fittings" },
         ]}
       />
 

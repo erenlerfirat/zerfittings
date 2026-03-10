@@ -1,16 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Process() {
   const stats = [
-    { label: "Teknik Ürün Çeşidi  ", value: 10000, plus: true },
+    { label: "Teknik Ürün Çeşidi", value: 10000, plus: true },
     { label: "365 Gün Servis", value: 365 },
     { label: "5000+ Müşteri Memnuniyeti", value: 5000, plus: true },
     { label: "7/24 Canlı Destek", value: 24 },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
+  const [start, setStart] = useState(false);
+  const ref = useRef(null);
 
+  // Intersection Observer ile scroll'da tetikleme
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStart(true);
+          observer.disconnect(); // sadece bir kez tetikle
+        }
+      },
+      { threshold: 0.3 } // container %30 görünür olunca
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Sayı animasyonu
+  useEffect(() => {
+    if (!start) return;
+
     const duration = 1500;
     const frameRate = 30;
     const totalFrames = Math.round((duration / 1000) * frameRate);
@@ -29,12 +51,14 @@ function Process() {
         if (frame === totalFrames) clearInterval(counter);
       }, duration / totalFrames);
     });
-  }, []);
+  }, [start]);
 
   return (
-    <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4
-                    h-auto sm:h-80 md:h-76 lg:h-[400px]">      
-
+    <div
+      ref={ref}
+      className="flex flex-col justify-start items-center bg-gray-100 px-4
+                 h-auto sm:h-80 md:h-76 lg:h-[200px]"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
         {stats.map((stat, index) => (
           <div

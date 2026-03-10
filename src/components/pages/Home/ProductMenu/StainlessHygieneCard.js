@@ -1,8 +1,10 @@
 import Product from "../../Products/Product";
-import img from '../../../assets/photo/dirsek/din-dirsek90.png';
-import img2 from '../../../assets/photo/tee/uzun-tee.png';
-import img3 from '../../../assets/photo/boru-aski-kelepce/boru-saplı-kelepçe.png';
-import img4 from '../../../assets/photo/filtre/paslanmaz-y-tipi-hat-filtresi.jpg';
+import img from '../../../../assets/photo/dirsek/din-dirsek90.png';
+import img2 from '../../../../assets/photo/tee/uzun-tee.png';
+import img3 from '../../../../assets/photo/boru-aski-kelepce/boru-saplı-kelepçe.png';
+import img4 from '../../../../assets/photo/filtre/paslanmaz-y-tipi-hat-filtresi.jpg';
+import Footer from '../../../layout/Footer.js';
+import MainNavigation from '../../../layout/MainNavigation.js';
 import { Link } from "react-router-dom";
 
 function StainlessHygieneCard() {
@@ -14,6 +16,8 @@ function StainlessHygieneCard() {
   ];
 
   return (
+    <div className=" h-screen w-screen overflow-x-hidden">            
+            <MainNavigation />
     <div className="bg-gray-100 min-h-screen py-12 px-4 flex flex-col items-center">
       <p className="text-center pt-24 mb-8 text-4xl text-gray-700 font-bold">
           Hijyenik Paslanmaz Ürünler
@@ -27,6 +31,8 @@ function StainlessHygieneCard() {
         ))}
       </ul>
     </div>
+    <Footer />
+        </div>
   );
 }
 

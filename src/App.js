@@ -11,6 +11,8 @@ import WeldedFittings from './components/pages/Products/industry/WeldedFittings.
 import ThreadedFittings from './components/pages/Products/industry/ThreadedFittings.js';
 import Pipe from './components/pages/Products/pipe/Pipe.js';
 import Profile from './components/pages/Products/profile/Profile.js';
+import IndustrialCard from './components/pages/Home/ProductMenu/IndustrialCard.js';
+import StainlessHygieneCard from './components/pages/Home/ProductMenu/StainlessHygieneCard.js';
 
 function App() {
 
@@ -25,10 +27,12 @@ function App() {
         <Route path="/urunler/paslanmaz-tee" element={<StainlessTee/>} />
         <Route path="/urunler/paslanmaz-boru-kelepce" element={<StainlessClamp/>} />
         <Route path="/urunler/paslanmaz-filtre" element={<StainlessFilter/>} />
-        <Route path="/disli-fittings" element={<ThreadedFittings/>} />
-        <Route path="/kaynakli-fittings" element={<WeldedFittings/>} />
+        <Route path="/urunler/disli-fittings" element={<ThreadedFittings/>} />
+        <Route path="/urunler/kaynakli-fittings" element={<WeldedFittings/>} />
         <Route path="/boru" element={<Pipe/>} />
         <Route path="/profil" element={<Profile/>} />
+        <Route path="/industrial" element={<IndustrialCard />} />
+        <Route path="/stainless" element={<StainlessHygieneCard />} />
       </Routes>
   );
 }

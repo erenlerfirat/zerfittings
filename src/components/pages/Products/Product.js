@@ -2,9 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
-function Product({ img, headerFirstLine, detailImg, imagestyle }) {
+function Product({ img, headerFirstLine, detailImg, imagestyle,clickable }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const hasDetail = Boolean(detailImg);
+  
 
   const modal = (
   <div
@@ -27,8 +28,10 @@ function Product({ img, headerFirstLine, detailImg, imagestyle }) {
 
       <img
         src={detailImg}
-        alt={`${headerFirstLine} Detail`}
-        className="w-full h-full object-contain"
+        alt={headerFirstLine}
+        className={`w-full h-full object-contain transition-transform duration-500 hover:scale-105 block 
+          ${hasDetail || clickable ? "cursor-pointer" : ""} 
+          ${imagestyle || ""}`}
       />
     </div>
   </div>
@@ -46,21 +49,20 @@ function Product({ img, headerFirstLine, detailImg, imagestyle }) {
       >
         <div className="relative overflow-hidden aspect-[4/3] bg-white flex items-center justify-center p-4">
           <img
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => hasDetail &&setIsModalOpen(true)}
             src={img}
             alt={headerFirstLine}
-            className={`w-full h-full object-contain transition-transform duration-500 hover:scale-105 block ${
-              hasDetail ? "cursor-pointer" : ""
-            }`}
+            className={`w-full h-full object-contain transition-transform duration-500 hover:scale-105 block 
+              ${hasDetail || clickable ? "cursor-pointer" : ""}`}
           />
         </div>
 
         <button
-          disabled={!hasDetail}
-          onClick={() => setIsModalOpen(true)}
-          className={`w-full py-6 px-4 font-bold text-lg uppercase tracking-tight transition-all duration-200 flex flex-col items-center justify-center text-gray-500 ${
-            hasDetail ? "cursor-pointer" : "cursor-disabled"
-          }`}
+          disabled={!hasDetail && !clickable}
+          onClick={() => hasDetail &&setIsModalOpen(true)}
+          className={`w-full py-6 px-4 font-bold text-lg uppercase tracking-tight transition-all duration-200 
+            flex flex-col items-center justify-center text-gray-500 
+            ${hasDetail || clickable ? "cursor-pointer" : "cursor-disabled"}`}
         >
           <span className="leading-tight">{headerFirstLine}</span>
         </button>

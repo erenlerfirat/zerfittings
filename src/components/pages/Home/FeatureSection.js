@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import evergreen from '../../../assets/evergreen2.jpg'
 import loadedship from '../../../assets/loadedship.jpg'
 import valves from '../../../assets/valves.jpg'
@@ -7,48 +8,24 @@ const FeatureSection = () => {
     const featureSections = [
         {
             img: evergreen,
-            header: "Expertise in Portline Global",
-            desc: "Portline Global draws on with 10's of years of industry experience to support the essential valve and fitting needs of customers worldwide. With facilities in Turkey, Singapore, the Netherlands, Korea, and China, we supply dependable JIS and DIN standard marine valves as well as a full range of butterfly valve spare parts.",
+            header: "Zer Fittings’te Uzmanlık",
+            desc: "Zer Fittings, on yılların endüstri deneyimini kullanarak dünya çapındaki müşterilerin temel vana ve fitting ihtiyaçlarını karşılamaktadır. Türkiye, Singapur, Hollanda, Kore ve Çin’deki tesislerimizle, güvenilir JIS ve DIN standartlı deniz vanaları ile tam kapsamlı kelebek vana yedek parçaları sunuyoruz.",
             elements: [
-                "Reliable solutions backed by decades of technical expertise and proven industry knowledge.",
-                "Fully compliant products, ensuring smooth and uninterrupted operations for shipowners, shipyards, and marine service providers.",
-                "Fast and efficient service, supported by strategically positioned global stock points.",
-                "Solution-oriented approach that keeps vessel operations running without interruption",
+                "On yıllara dayanan teknik uzmanlık ve kanıtlanmış sektör bilgisi ile desteklenen güvenilir çözümler.",
+                "Tam uyumlu ürünler, gemi sahipleri, tersaneler ve deniz hizmet sağlayıcıları için kesintisiz operasyon sağlar.",
+                "Stratejik olarak konumlanmış küresel stok noktaları sayesinde hızlı ve verimli hizmet.",
+                "Gemi operasyonlarının kesintisiz çalışmasını sağlayan çözüm odaklı yaklaşım."
             ]
         },
         {
             img: loadedship,
-            header: "Global Compliance & Industry-Standard Assurance",
-            desc: "At Portline Global, we maintain a strong commitment to environmental responsibility and operational safety by adhering to internationally recognized regulations and compliance standards:",
+            header: "Küresel Uyumluluk ve Sektör Standardı Güvencesi",
+            desc: "Zer Fittings olarak, çevresel sorumluluk ve operasyonel güvenliğe güçlü bir bağlılık gösteriyor, uluslararası kabul görmüş yönetmelik ve uyumluluk standartlarına uyuyoruz:",
             elements: [
-                "Strict alignment with global environmental guidelines to ensure our products support responsible and sustainable marine operations.",
-                "Full conformity with widely accepted safety and quality benchmarks set by leading international maritime bodies."
+                "Ürünlerimizin sorumlu ve sürdürülebilir deniz operasyonlarını desteklemesini sağlamak için küresel çevre yönergelerine sıkı uyum.",
+                "Önde gelen uluslararası denizcilik kuruluşları tarafından belirlenen güvenlik ve kalite standartlarına tam uyum."
             ]
-        },
-        {
-            img: valves,
-            header: "Complete Valve Solutions & a Broad Spare Parts Portfolio",
-            desc: "At Portline Global, we deliver end-to-end valve solutions designed to meet the unique requirements of every customer. Our offerings include:",
-            elements: [
-                "Custom-manufactured valves and connection fittings",                
-                "Globe, butterfly, gate, check, and strainer valves",
-                "A wide assortment of marine valves built to JIS and DIN standards, suitable for multiple shipboard systems and applications.",
-                "Authentic butterfly valve spare parts for Keystone Valve Korea, including seats (NBR, RTFE, VITON), discs, O-rings, screws, stems, bushings, and packing materials.",
-                "An extensive inventory of spare components for leading valve manufacturers such as ACE, NAKAKITA, and TOMOE, providing dependable quality and long-term performance."
-            ]
-        },
-        {
-            img: valves2,
-            header: "Reliable Manufacturing & Class-Approved Quality",
-            desc: "Our JIS-standard valves are manufactured exclusively in Korea under the Portline Global brand, while our DIN-standard products are produced in Turkey and China by highly reputable partners known for their technical capability and industry know-how.",
-            elements: [
-                "Actuator-operated control valves",
-                "Supply of spare parts and components",
-                "All associated foundries carry major class certifications from globally recognized maritime organizations, including DNV-GL, LR, ABS, BV, KR, and ClassNK",
-                "Ensuring full compliance and trusted performance.",
-                "Fast and efficient global delivery, no matter where you operate."
-            ]
-        },
+        }
     ];
 
     return (
@@ -114,10 +91,11 @@ function Feature({ img, header, desc, elements, reverse }) {
                             </li>
                         ))}
                     </ul>
-
-                    <button className="my-4 px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg">
+                            <Link to="/Contact">
+                    <button className="my-4 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg">
                         LEARN MORE
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

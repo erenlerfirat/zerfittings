@@ -1,7 +1,9 @@
 import Product from "../../Products/Product";
-import img from '../../../assets/photo/disli-fittings/altikose-cift-tarafli-nipel.jpg';
-import img2 from '../../../assets/photo/kaynakli-fittings/kaynak-uclu-konik-rakor.jpg';
+import img from '../../../../assets/photo/disli-fittings/altikose-cift-tarafli-nipel.jpg';
+import img2 from '../../../../assets/photo/kaynakli-fittings/kaynak-uclu-konik-rakor.jpg';
 import { Link } from "react-router-dom";
+import Footer from "../../../layout/Footer";
+import MainNavigation from "../../../layout/MainNavigation";
 
 function IndustrialCard() {
   const products = [
@@ -10,6 +12,8 @@ function IndustrialCard() {
   ];
 
   return (
+    <div className=" h-screen w-screen overflow-x-hidden">            
+            <MainNavigation/>
     <div className="bg-gray-100 min-h-screen py-12 px-4 flex flex-col items-center">
       <p className="text-center pt-24 mb-8 text-4xl text-gray-700 font-bold">
           Endüstriyel Ürünler
@@ -18,11 +22,13 @@ function IndustrialCard() {
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-11/12 max-w-7xl">
         {products.map((p, index) => (
           <Link to={`/${p.path}`} key={index}>
-            <Product headerFirstLine={p.headerFirstLine} img={p.img} />
+            <Product headerFirstLine={p.headerFirstLine} img={p.img}/>
           </Link>
         ))}
       </ul>
     </div>
+    <Footer />
+        </div>
   );
 }
 

@@ -4,14 +4,15 @@ import ContactForm from './ContactForm.js'
 import Slider from './Slider.js'
 import Process from './Process.js'
 import ProductsCard from './ProductMenu/ProductsCard.js'
+import FeatureSection from './FeatureSection.js'
 
 function Home() {
     return (
         <div className=" h-screen w-screen overflow-x-hidden">            
             <MainNavigation />
             <ProductsCard />
-            {/* <FeatureSection /> */}
             <Process/>
+            <FeatureSection />   
             <Slider/>
             <ContactForm />
             <Footer />
