@@ -9,7 +9,7 @@ import CookiePolicyModal from '../../common/CookiePolicyModal.js'
 
 function Home() {
     return (
-        <div className=" h-screen w-screen overflow-x-hidden">            
+        <div className=" flex flex-col min-h-screen w-screen overflow-x-hidden">            
             <MainNavigation />
             <CookiePolicyModal />
             <ProductsCard />
