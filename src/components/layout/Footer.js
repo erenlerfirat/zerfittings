@@ -3,16 +3,12 @@ import tkn from '../../assets/tknlogo.png';
 function Footer() {
     return (
         <div className="bg-gradient-to-r from-sky-500 to-indigo-600 text-white py-10">
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 ">
-                
-                {/* Hakkımızda */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 ">                
                 <div className="     border-t-2">
                     <p>
                         <span className="font-semibold">Zer Fittings</span>, vana tedariki, teknik servis, özel üretim, yedek parça ve global lojistik hizmetlerini tek çatı altında sunan uluslararası bir denizcilik çözümleri sağlayıcısıdır. Mühendislik uzmanlığı ve sahaya hazır servis ekipleriyle, dünya genelindeki armatörlere, işletmecilere ve tersanelere güvenilir, mevzuata uygun ve hızlı destek sunarak operasyonel sürekliliği ve uzun vadeli değer oluşturmayı garanti eder.
                     </p>
                 </div>
-
-                {/* İletişim */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left border-t-2">
                     <img src={tkn} alt="TKN Logo" className="h-12 w-auto mb-4 mt-2" />
                     <ul className="p-0 space-y-1 text-sm">
