@@ -17,7 +17,7 @@ function Footer() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left border-t-2">
           <ul className="p-0 space-y-1 text-sm">
             <li className="font-semibold">
-              ZerFittings SEMA Marine Solutions <br />
+              ZerFittings SEBA Marine Solutions <br />
               GEMİ İNŞAAT Limited Şirketi ile iştiraktir
             </li>
             <li>
