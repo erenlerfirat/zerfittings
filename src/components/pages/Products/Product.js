@@ -9,11 +9,7 @@ function Product({ img, headerFirstLine, detailImg, imagestyle, clickable }) {
   const modal = (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) {
-          setIsModalOpen(false);
-        }
-      }}
+      onClick={() => setIsModalOpen(false)}
     >
       <div className="relative w-[95vw] h-[80vh] flex items-center justify-center">
         <button
@@ -26,7 +22,8 @@ function Product({ img, headerFirstLine, detailImg, imagestyle, clickable }) {
         <img
           src={detailImg}
           alt={headerFirstLine}
-          className={`w-full h-full object-contain transition-transform duration-500 hover:scale-105 block 
+          onClick={(e) => e.stopPropagation()}
+          className={`max-w-full max-h-full object-contain transition-transform duration-500 hover:scale-105 block 
           ${hasDetail || clickable ? "cursor-pointer" : ""} 
           ${imagestyle || ""}`}
         />
